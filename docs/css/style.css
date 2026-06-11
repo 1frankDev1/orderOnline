@@ -1,0 +1,232 @@
+:root {
+    --primary-orange: #f27a20;
+    --dark-sidebar: #373737;
+    --light-bg: #f4f7f6;
+    --border-color: #e0e0e0;
+    --text-grey: #757575;
+    --header-height: 60px;
+    --icon-sidebar-width: 65px;
+    --setup-sidebar-width: 240px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header Styles */
+header {
+    height: var(--header-height);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    width: var(--icon-sidebar-width);
+    justify-content: center;
+}
+
+.logo-box {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-orange);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.restaurant-info {
+    flex-grow: 1;
+    padding-left: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.user-details {
+    text-align: right;
+    margin-left: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    display: block;
+    font-size: 14px;
+}
+
+.user-email {
+    font-size: 12px;
+    color: var(--text-grey);
+}
+
+/* Main Layout */
+.main-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Icon Sidebar (Leftmost) */
+.icon-sidebar {
+    width: var(--icon-sidebar-width);
+    background-color: var(--dark-sidebar);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.icon-item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b0b0;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.icon-item.active {
+    color: var(--primary-orange);
+}
+
+.icon-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary-orange);
+}
+
+/* Setup Sidebar (Secondary) */
+.setup-sidebar {
+    width: var(--setup-sidebar-width);
+    background-color: white;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+.setup-title {
+    padding: 0 20px 20px;
+    color: #b0b0b0;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-section {
+    margin-bottom: 5px;
+}
+
+.menu-header {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.menu-header:hover {
+    background-color: #f9f9f9;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.submenu.expanded {
+    display: block;
+}
+
+.submenu-item {
+    padding: 10px 20px 10px 40px;
+    font-size: 13px;
+    color: var(--text-grey);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submenu-item:hover {
+    background-color: #f9f9f9;
+}
+
+.submenu-item.active {
+    color: var(--primary-orange);
+    font-weight: 600;
+    position: relative;
+}
+
+.submenu-item.active::before {
+    content: '●';
+    position: absolute;
+    left: 20px;
+    font-size: 8px;
+}
+
+.checkmark {
+    color: #4caf50;
+    font-size: 10px;
+}
+
+/* Page Body (Map area) */
+.page-body {
+    flex-grow: 1;
+    background-color: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/img/map_placeholder.png'); /* We should add a placeholder */
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/* Form overlay (mockup) */
+.form-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 500px;
+}

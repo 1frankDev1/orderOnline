@@ -13,11 +13,16 @@
             <div class="logo-section">
                 <img src="https://menutech.services/assets/img/logomt.png" alt="Logo" style="height: 50px;">
             </div>
-            <div class="user-profile">
-                <i class="far fa-comment-alt header-help-icon" id="open-help-modal"></i>
+            <div class="user-profile" id="user-profile-btn">
+                <i class="far fa-comment-alt header-help-icon" id="help-nav-icon"></i>
                 <div class="user-details">
                     <span class="user-name">user <i class="fas fa-caret-down"></i></span>
                     <span class="user-email">user@menutech.xyz</span>
+                </div>
+                <div class="user-submenu" id="user-submenu">
+                    <div class="user-submenu-item">
+                        <i class="fas fa-sign-out-alt"></i> Sign out
+                    </div>
                 </div>
             </div>
         </header>
@@ -45,10 +50,10 @@
                 <div class="setup-title">Setup</div>
 
                 <div class="menu-section">
-                    <div class="menu-header" id="restaurant-basics-header">
+                    <div class="menu-header">
                         Restaurant basics <i class="fas fa-chevron-down"></i>
                     </div>
-                    <ul class="submenu expanded" id="restaurant-basics-submenu">
+                    <ul class="submenu expanded">
                         <li class="submenu-item active" data-slug="address-form">Name & address</li>
                         <li class="submenu-item" data-slug="location">Location</li>
                         <li class="submenu-item" data-slug="website">Restaurant website</li>
@@ -59,10 +64,10 @@
                 </div>
 
                 <div class="menu-section">
-                    <div class="menu-header" id="services-header">
+                    <div class="menu-header">
                         Services & opening hours <i class="fas fa-chevron-right"></i>
                     </div>
-                    <ul class="submenu" id="services-submenu">
+                    <ul class="submenu">
                         <li class="submenu-item" data-slug="pickup">Pickup</li>
                         <li class="submenu-item" data-slug="delivery">Delivery</li>
                         <li class="submenu-item" data-slug="table-reservation">Table reservation</li>
@@ -73,20 +78,18 @@
                 </div>
 
                 <div class="menu-section">
-                    <div class="menu-header" id="payment-methods-header">
+                    <div class="menu-header">
                         Payment methods & taxes <i class="fas fa-chevron-right"></i>
                     </div>
-                    <ul class="submenu" id="payment-methods-submenu">
+                    <ul class="submenu">
                         <li class="submenu-item" data-slug="taxation">Taxation</li>
                         <li class="submenu-item" data-slug="payment-methods">Payment methods</li>
                     </ul>
                 </div>
 
                 <div class="menu-section">
-                    <div class="menu-header" id="menu-setup-header">
-                        Menu Setup <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <ul class="submenu" id="menu-setup-submenu">
+                    <div class="menu-header">Menu Setup <i class="fas fa-chevron-right"></i></div>
+                    <ul class="submenu">
                         <li class="submenu-item" data-slug="menu-setup">Menu Setup</li>
                     </ul>
                 </div>
@@ -96,37 +99,13 @@
                 </div>
 
                 <div class="menu-section">
-                    <div class="menu-header" id="taking-orders-header">
+                    <div class="menu-header">
                         Taking orders <i class="fas fa-chevron-right"></i>
                     </div>
-                    <ul class="submenu" id="taking-orders-submenu">
+                    <ul class="submenu">
                         <li class="submenu-item" data-slug="order-taking-app">Order Taking App</li>
                         <li class="submenu-item" data-slug="auto-accept-orders">Auto-accept orders</li>
                         <li class="submenu-item" data-slug="alert-call">Alert call</li>
-                    </ul>
-                </div>
-
-                <div class="menu-section">
-                    <div class="menu-header" id="publishing-header">
-                        Publishing <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <ul class="submenu" id="publishing-submenu">
-                        <li class="submenu-item" data-slug="official-details">Official details & policy</li>
-                        <li class="submenu-item" data-slug="facebook">Facebook</li>
-                        <li class="submenu-item" data-slug="smart-links">Smart links</li>
-                        <li class="submenu-item" data-slug="sales-optimized">Sales optimized website</li>
-                        <li class="submenu-item" data-slug="legacy-website">Legacy website</li>
-                    </ul>
-                </div>
-
-                <div class="menu-section">
-                    <div class="menu-header" id="payments-header">
-                        Payments <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <ul class="submenu" id="payments-submenu">
-                        <li class="submenu-item" data-slug="oracle-payments">Oracle payments (recommended)</li>
-                        <li class="submenu-item" data-slug="other-providers">Other providers</li>
-                        <li class="submenu-item" data-slug="reservation-deposit">Reservation deposit</li>
                     </ul>
                 </div>
             </aside>
@@ -135,70 +114,68 @@
                 <div class="map-placeholder"></div>
 
                 <div id="dynamic-content-area">
-                    <div class="form-overlay">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                            <h2 style="margin: 0; font-size: 18px;">What is your restaurant's address?</h2>
-                            <button style="background-color: var(--primary-orange); color: white; border: none; padding: 8px 20px; border-radius: 4px; font-weight: bold; cursor: pointer;">Next</button>
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h2>What is your restaurant's address?</h2>
+                            <button id="btn-next" class="btn-next">Next</button>
                         </div>
 
-                        <form>
-                            <div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 4px; position: relative;">
-                                <label style="position: absolute; top: -10px; left: 10px; background: white; padding: 0 5px; font-size: 12px; color: #777;">Restaurant Name *</label>
-                                <div style="display: flex; align-items: center;">
-                                    <i class="fas fa-store" style="color: #999; margin-right: 10px;"></i>
-                                    <input type="text" placeholder="Enter Restaurant Name" style="border: none; width: 100%; outline: none; font-size: 14px;">
+                        <form id="restaurant-address-form">
+                            <div class="input-group">
+                                <label>Restaurant Name *</label>
+                                <i class="fas fa-store"></i>
+                                <input type="text" value="El Cuzcatlan Restaurant Bar & Grill">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Restaurant Phone Number *</label>
+                                <i class="fas fa-phone"></i>
+                                <input type="text" value="+1 713 636 3980">
+                                <i class="fas fa-plus" style="margin-left: 10px; cursor: pointer; color: #777;"></i>
+                            </div>
+
+                            <div class="input-group">
+                                <i class="fas fa-globe"></i>
+                                <select>
+                                    <option>United States</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <select>
+                                    <option>Texas</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <i class="fas fa-clock"></i>
+                                <select>
+                                    <option>America/Chicago</option>
+                                </select>
+                            </div>
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>City *</label>
+                                    <i class="fas fa-city"></i>
+                                    <input type="text" value="Houston">
+                                </div>
+                                <div class="input-group">
+                                    <label>ZIP / Postal Code *</label>
+                                    <input type="text" value="77063">
                                 </div>
                             </div>
 
-                            <div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 4px; position: relative;">
-                                <label style="position: absolute; top: -10px; left: 10px; background: white; padding: 0 5px; font-size: 12px; color: #777;">Restaurant Phone Number *</label>
-                                <div style="display: flex; align-items: center;">
-                                    <i class="fas fa-phone" style="color: #999; margin-right: 10px;"></i>
-                                    <input type="text" placeholder="+1 000 000 0000" style="border: none; width: 100%; outline: none; font-size: 14px;">
-                                    <i class="fas fa-plus" style="color: #999; margin-left: 10px;"></i>
-                                </div>
-                            </div>
-
-                            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                                <div style="border: 1px solid #ddd; padding: 10px; border-radius: 4px;">
-                                    <i class="fas fa-globe" style="color: #999; margin-right: 10px;"></i>
-                                    <select style="border: none; width: calc(100% - 30px); outline: none; background: transparent;">
-                                        <option>United States</option>
-                                    </select>
-                                </div>
-                                <div style="border: 1px solid #ddd; padding: 10px; border-radius: 4px;">
-                                    <i class="fas fa-map-marker-alt" style="color: #999; margin-right: 10px;"></i>
-                                    <select style="border: none; width: calc(100% - 30px); outline: none; background: transparent;">
-                                        <option>Texas</option>
-                                    </select>
-                                </div>
+                            <div class="input-group">
+                                <label>Street Name & Number *</label>
+                                <i class="fas fa-plus"></i>
+                                <input type="text" value="9395 Richmond Ave">
                             </div>
                         </form>
                     </div>
                 </div>
             </main>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="help-modal">
-        <div class="help-modal-content">
-            <div class="help-modal-header">
-                We are happy to help
-                <i class="fas fa-times" style="cursor: pointer;" id="close-help-modal"></i>
-            </div>
-            <div class="help-modal-body">
-                <div class="help-form-box">
-                    <div class="help-form-box-header">
-                        MenuTech
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <div class="help-contact-info">
-                        menutecho@gmail.com, (877) 859-0858, www.menutech.xyz
-                    </div>
-                    <textarea class="help-textarea" placeholder="Type your question here, I'm happy to help"></textarea>
-                    <button class="help-submit-btn">Ask Question</button>
-                </div>
-            </div>
         </div>
     </div>
 

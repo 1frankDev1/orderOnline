@@ -83,4 +83,26 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     }
+
+    // 4. Help Modal Logic
+    const helpModal = document.getElementById('help-modal');
+    const openHelpBtn = document.getElementById('open-help-modal');
+    const closeHelpBtn = document.getElementById('close-help-modal');
+
+    if (helpModal && openHelpBtn && closeHelpBtn) {
+        openHelpBtn.addEventListener('click', () => {
+            helpModal.classList.add('active');
+        });
+
+        closeHelpBtn.addEventListener('click', () => {
+            helpModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside content
+        helpModal.addEventListener('click', (e) => {
+            if (e.target === helpModal) {
+                helpModal.classList.remove('active');
+            }
+        });
+    }
 });

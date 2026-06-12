@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kickstarter - Platform</title>
+    <title>Marketing Tools - Platform</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,18 +11,16 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <div class="logo-box">
-                    <i class="fas fa-utensils"></i>
-                </div>
+                <img src="https://menutech.services/assets/img/logomt.png" alt="Logo" style="height: 40px;">
             </div>
             <div class="restaurant-info">
-                El Cuzcatlan Restaurant Bar & Grill <i class="fas fa-caret-down"></i>
+                <i class="fas fa-caret-down"></i>
             </div>
             <div class="user-profile">
                 <i class="far fa-comment-alt"></i>
                 <div class="user-details">
                     <span class="user-name">Rudis Sorto <i class="fas fa-caret-down"></i></span>
-                    <span class="user-email">elcuzcatlan@menutech.xyz</span>
+                    <span class="user-email">user@menutech.xyz</span>
                 </div>
             </div>
         </header>
@@ -47,24 +45,42 @@
             </aside>
 
             <aside class="setup-sidebar">
-                <div class="setup-title">Kickstarter</div>
+                <div class="setup-title">Marketing Tools</div>
 
                 <div class="menu-section">
-                    <div class="menu-header">
-                        Overview <i class="fas fa-chevron-right"></i>
+                    <div class="menu-header" id="kickstarter-header">
+                        Kickstarter <i class="fas fa-chevron-down"></i>
                     </div>
+                    <ul class="submenu expanded" id="kickstarter-submenu">
+                        <li class="submenu-item active" data-slug="overview">Overview</li>
+                        <li class="submenu-item" data-slug="first-buy-promo">First buy promo</li>
+                        <li class="submenu-item" data-slug="invite-prospects">Invite Prospects</li>
+                    </ul>
                 </div>
+
                 <div class="menu-section">
-                    <div class="menu-header">
-                        Tasks <i class="fas fa-chevron-right"></i>
-                    </div>
+                    <div class="menu-header">Website scanner <i class="fas fa-chevron-right"></i></div>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-header">Google business <i class="fas fa-chevron-right"></i></div>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-header">Promotions <i class="fas fa-chevron-right"></i></div>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-header">QR codes & Flyers <i class="fas fa-chevron-right"></i></div>
                 </div>
             </aside>
 
             <main class="page-body">
-                <div style="padding: 40px;">
-                    <h1>Kickstarter Overview</h1>
-                    <p>Welcome to the kickstarter panel.</p>
+                <div id="dynamic-content-area">
+                    <div style="padding: 40px;">
+                        <h1>Kickstarter Overview</h1>
+                        <p>Welcome to the kickstarter panel.</p>
+                    </div>
                 </div>
             </main>
         </div>

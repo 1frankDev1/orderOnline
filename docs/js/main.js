@@ -31,10 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Dynamic content simulation within Setup page
+    // 3. Dynamic content simulation within Setup and Marketing pages
     const submenuItems = document.querySelectorAll('.submenu-item');
-    const contentArea = document.querySelector('main.page-body');
-    let initialContent = contentArea ? contentArea.innerHTML : '';
+    const contentArea = document.getElementById('dynamic-content-area');
+
+    // Store original setup content if we are on the setup page
+    let initialSetupContent = null;
+    if (window.location.pathname.endsWith('setup.html') || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+        initialSetupContent = contentArea ? contentArea.innerHTML : null;
+    }
 
     if (submenuItems.length > 0 && contentArea) {
         submenuItems.forEach(item => {
@@ -53,14 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateContent(slug) {
-        if (slug === 'address-form') {
-            contentArea.innerHTML = initialContent;
+        if (slug === 'address-form' && initialSetupContent) {
+            contentArea.innerHTML = initialSetupContent;
         } else {
             contentArea.innerHTML = `
-                <div class="map-placeholder"></div>
                 <div style="padding: 40px; position: relative; z-index: 10;">
-                    <h2 style="color: #333; background: rgba(255,255,255,0.8); display: inline-block; padding: 5px 10px; border-radius: 4px;">Content for: ${slug.replace(/-/g, ' ')}</h2>
-                    <p style="color: #666; background: rgba(255,255,255,0.8); padding: 5px 10px; border-radius: 4px;">This section is under construction.</p>
+                    <h1 style="color: #333;">${slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h1>
+                    <p style="color: #666;">This section is under construction.</p>
                 </div>
             `;
         }

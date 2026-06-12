@@ -10,16 +10,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Submenu Toggle Logic (Setup page)
+    // 2. Submenu Toggle Logic (Accordion behavior)
     const menuHeaders = document.querySelectorAll('.menu-header');
+    const allSubmenus = document.querySelectorAll('.submenu');
 
     menuHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const submenu = header.nextElementSibling;
             if (submenu && submenu.classList.contains('submenu')) {
                 const isExpanded = submenu.classList.contains('expanded');
-                const icon = header.querySelector('i');
 
+                // Close all other submenus
+                allSubmenus.forEach(s => {
+                    if (s !== submenu) {
+                        s.classList.remove('expanded');
+                        const h = s.previousElementSibling;
+                        if (h) {
+                            const icon = h.querySelector('i.fa-chevron-down');
+                            if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-right');
+                        }
+                    }
+                });
+
+                // Toggle current submenu
+                const icon = header.querySelector('i');
                 if (isExpanded) {
                     submenu.classList.remove('expanded');
                     if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-right');

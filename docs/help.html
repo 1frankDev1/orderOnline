@@ -11,18 +11,13 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <img src="https://menutech.services/assets/img/logomt.png" alt="Logo" style="height: 50px;">
+                <img src="https://menutech.services/assets/img/logomt.png" alt="Logo" style="height: 35px;">
             </div>
             <div class="user-profile" id="user-profile-btn">
-                <i class="far fa-comment-alt header-help-icon" id="help-nav-icon"></i>
+                <i class="far fa-comment-alt header-help-icon" id="help-nav-icon" style="color: #f27a20;"></i>
                 <div class="user-details">
                     <span class="user-name">user <i class="fas fa-caret-down"></i></span>
                     <span class="user-email">user@menutech.xyz</span>
-                </div>
-                <div class="user-submenu" id="user-submenu">
-                    <div class="user-submenu-item">
-                        <i class="fas fa-sign-out-alt"></i> Sign out
-                    </div>
                 </div>
             </div>
         </header>
@@ -46,26 +41,24 @@
                 </div>
             </aside>
 
-            <main class="page-body">
-                <div class="help-content-area">
-                    <h1 style="margin-bottom: 30px;">We are happy to help</h1>
+            <aside class="setup-sidebar">
+                <div class="setup-title">Help</div>
+                <div class="menu-section">
+                    <div class="menu-header">Contact Support</div>
+                </div>
+            </aside>
 
+            <main class="page-body">
+                <div class="help-content-area" style="width: 100%;">
                     <div class="help-box">
                         <div class="help-box-header">
-                            MenuTech
-                            <i class="fas fa-chevron-up"></i>
+                            <span>How can we help?</span>
+                            <i class="fas fa-times" style="cursor: pointer; color: #999;" onclick="window.history.back()"></i>
                         </div>
                         <div class="help-box-body">
-                            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">
-                                <i class="fas fa-envelope" style="margin-right: 10px;"></i> menutecho@gmail.com &nbsp;&nbsp;
-                                <i class="fas fa-phone" style="margin-right: 10px;"></i> (877) 859-0858 &nbsp;&nbsp;
-                                <i class="fas fa-globe" style="margin-right: 10px;"></i> www.menutech.xyz
-                            </p>
-
-                            <label style="font-size: 14px; color: #333; font-weight: 500;">How can we help you today?</label>
-                            <textarea class="help-textarea" placeholder="Type your question here, I'm happy to help"></textarea>
-
-                            <button class="help-submit">Ask Question</button>
+                            <p style="font-size: 16px; color: #666; margin-bottom: 10px;">Please describe your issue or question below.</p>
+                            <textarea class="help-textarea" placeholder="Type your message here..."></textarea>
+                            <button class="help-submit">Send Message</button>
                         </div>
                     </div>
                 </div>

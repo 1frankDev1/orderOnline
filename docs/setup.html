@@ -11,18 +11,13 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <img src="https://menutech.services/assets/img/logomt.png" alt="Logo" style="height: 50px;">
+                <img src="https://menutech.services/assets/img/logomt.png" alt="Logo" style="height: 35px;">
             </div>
             <div class="user-profile" id="user-profile-btn">
                 <i class="far fa-comment-alt header-help-icon" id="help-nav-icon"></i>
                 <div class="user-details">
                     <span class="user-name">user <i class="fas fa-caret-down"></i></span>
                     <span class="user-email">user@menutech.xyz</span>
-                </div>
-                <div class="user-submenu" id="user-submenu">
-                    <div class="user-submenu-item">
-                        <i class="fas fa-sign-out-alt"></i> Sign out
-                    </div>
                 </div>
             </div>
         </header>
@@ -57,9 +52,7 @@
                         <li class="submenu-item active" data-slug="address-form">Name & address</li>
                         <li class="submenu-item" data-slug="location">Location</li>
                         <li class="submenu-item" data-slug="website">Restaurant website</li>
-                        <li class="submenu-item" data-slug="cuisine">Cuisine selector</li>
-                        <li class="submenu-item" data-slug="operation">Operation style</li>
-                        <li class="submenu-item" data-slug="confirmation">Account confirmation</li>
+                        <li class="submenu-item" data-slug="cuisine">Cuisine</li>
                     </ul>
                 </div>
 
@@ -81,17 +74,10 @@
                     <div class="menu-header">
                         Payment methods & taxes <i class="fas fa-chevron-right"></i>
                     </div>
-                    <ul class="submenu">
-                        <li class="submenu-item" data-slug="taxation">Taxation</li>
-                        <li class="submenu-item" data-slug="payment-methods">Payment methods</li>
-                    </ul>
                 </div>
 
                 <div class="menu-section">
                     <div class="menu-header">Menu Setup <i class="fas fa-chevron-right"></i></div>
-                    <ul class="submenu">
-                        <li class="submenu-item" data-slug="menu-setup">Menu Setup</li>
-                    </ul>
                 </div>
 
                 <div class="menu-section">
@@ -102,11 +88,6 @@
                     <div class="menu-header">
                         Taking orders <i class="fas fa-chevron-right"></i>
                     </div>
-                    <ul class="submenu">
-                        <li class="submenu-item" data-slug="order-taking-app">Order Taking App</li>
-                        <li class="submenu-item" data-slug="auto-accept-orders">Auto-accept orders</li>
-                        <li class="submenu-item" data-slug="alert-call">Alert call</li>
-                    </ul>
                 </div>
             </aside>
 
@@ -124,14 +105,14 @@
                             <div class="input-group">
                                 <label>Restaurant Name *</label>
                                 <i class="fas fa-store"></i>
-                                <input type="text" value="">
+                                <input type="text" placeholder="">
                             </div>
 
                             <div class="input-group">
                                 <label>Restaurant Phone Number *</label>
                                 <i class="fas fa-phone"></i>
-                                <input type="text" value="">
-                                <i class="fas fa-plus" style="margin-left: 10px; cursor: pointer; color: #777;"></i>
+                                <input type="text" placeholder="">
+                                <i class="fas fa-plus" style="margin-left: auto; margin-right: 0; cursor: pointer; color: #777; font-size: 20px;"></i>
                             </div>
 
                             <div class="input-group">
@@ -159,18 +140,18 @@
                                 <div class="input-group">
                                     <label>City *</label>
                                     <i class="fas fa-city"></i>
-                                    <input type="text" value="">
+                                    <input type="text" placeholder="">
                                 </div>
                                 <div class="input-group">
                                     <label>ZIP / Postal Code *</label>
-                                    <input type="text" value="">
+                                    <input type="text" placeholder="">
                                 </div>
                             </div>
 
                             <div class="input-group">
                                 <label>Street Name & Number *</label>
                                 <i class="fas fa-plus"></i>
-                                <input type="text" value="">
+                                <input type="text" placeholder="">
                             </div>
                         </form>
                     </div>

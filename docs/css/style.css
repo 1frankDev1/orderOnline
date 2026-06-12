@@ -38,8 +38,10 @@ header {
 .logo-section {
     display: flex;
     align-items: center;
-    width: var(--icon-sidebar-width);
+    width: calc(var(--icon-sidebar-width) + var(--setup-sidebar-width));
     justify-content: center;
+    border-right: 1px solid var(--border-color);
+    box-sizing: border-box;
 }
 
 .logo-box {

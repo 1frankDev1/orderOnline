@@ -1,0 +1,5 @@
+127.0.0.1 - - [12/Jun/2026 09:40:57] "GET /setup.html HTTP/1.1" 200 -
+127.0.0.1 - - [12/Jun/2026 09:40:57] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Jun/2026 09:40:57] "GET /js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Jun/2026 09:41:03] "GET /kickstarter.html HTTP/1.1" 200 -
+127.0.0.1 - - [12/Jun/2026 09:41:04] "GET /help.html HTTP/1.1" 200 -
